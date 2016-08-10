@@ -5,11 +5,11 @@ export class CameraPhotoBuilder extends BaseCommandBuilder {
         super('CameraPhoto');
     }
     public setOutputFile(path: string): CameraPhotoBuilder {
-        this.instance.addES('file', path);
+        this.instance.setESParam('file', path);
         return this;
     }
     public setCamera(id: Number): CameraPhotoBuilder {
-        this.instance.addES('camera', id.toString());
+        this.instance.setESParam('camera', id.toString());
         return this;
     }
 }

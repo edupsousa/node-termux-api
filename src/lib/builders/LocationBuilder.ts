@@ -5,27 +5,27 @@ export class LocationBuilder extends BaseCommandBuilder {
         super('Location');
     }
     public fromGPSProvider(): LocationBuilder {
-        this.instance.addES('provider', 'gps');
+        this.instance.setESParam('provider', 'gps');
         return this;
     }
     public fromNetworkProvider(): LocationBuilder {
-        this.instance.addES('provider', 'network');
+        this.instance.setESParam('provider', 'network');
         return this;
     }
     public fromPassiveProvider(): LocationBuilder {
-        this.instance.addES('provider', 'passive');
+        this.instance.setESParam('provider', 'passive');
         return this;
     }
     public requestLast(): LocationBuilder {
-        this.instance.addES('request', 'last');
+        this.instance.setESParam('request', 'last');
         return this;
     }
     public requestOnce(): LocationBuilder {
-        this.instance.addES('request', 'once');
+        this.instance.setESParam('request', 'once');
         return this;
     }
     public requestUpdates(): LocationBuilder {
-        this.instance.addES('request', 'updates');
+        this.instance.setESParam('request', 'updates');
         return this;
     }
 }

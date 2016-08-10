@@ -9,11 +9,11 @@ export class DownloadBuilder extends BaseCommandBuilder {
         return this;
     }
     public setDescription(description: string): DownloadBuilder {
-        this.instance.addES('description', description);
+        this.instance.setESParam('description', description);
         return this;
     }
     public setTitle(title: string): DownloadBuilder {
-        this.instance.addES('title', title);
+        this.instance.setESParam('title', title);
         return this;
     }
 }

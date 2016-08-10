@@ -5,19 +5,19 @@ export class DialogBuilder extends BaseCommandBuilder {
         super('Dialog');
     }
     public setTypePassword(): DialogBuilder {
-        this.instance.addES('input_type', 'password');
+        this.instance.setESParam('input_type', 'password');
         return this;
     }
     public setTitle(title: string): DialogBuilder {
-        this.instance.addES('input_title', title);
+        this.instance.setESParam('input_title', title);
         return this;
     }
     public setHint(title: string): DialogBuilder {
-        this.instance.addES('input_hint', title);
+        this.instance.setESParam('input_hint', title);
         return this;
     }
     public setMultiline(): DialogBuilder {
-        this.instance.addEZ('multiple_lines', true);
+        this.instance.setEZParam('multiple_lines', true);
         return this;
     }
 }

@@ -5,11 +5,11 @@ export class VibrateBuilder extends BaseCommandBuilder {
         super('Vibrate');
     }
     setDuration(duration: number): VibrateBuilder {
-        this.instance.addEI('duration_ms', duration);
+        this.instance.setEIParam('duration_ms', duration);
         return this;
     }
     force(): VibrateBuilder {
-        this.instance.addEZ('force', true);
+        this.instance.setEZParam('force', true);
         return this;
     }
 }

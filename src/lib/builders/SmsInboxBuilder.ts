@@ -5,19 +5,19 @@ export class SmsInboxBuilder extends BaseCommandBuilder {
         super('SmsInbox');
     }
     public showPhoneNumbers(): SmsInboxBuilder {
-        this.instance.addEZ('show-phone-numbers', true);
+        this.instance.setEZParam('show-phone-numbers', true);
         return this;
     }
     public showDates(): SmsInboxBuilder {
-        this.instance.addEZ('show-dates', true);
+        this.instance.setEZParam('show-dates', true);
         return this;
     }
     public offset(offset: number): SmsInboxBuilder {
-        this.instance.addEI('offset', offset);
+        this.instance.setEIParam('offset', offset);
         return this;
     }
     public limit(limit: number): SmsInboxBuilder {
-        this.instance.addEI('limit', limit);
+        this.instance.setEIParam('limit', limit);
         return this;
     }
 }
