@@ -1,8 +1,13 @@
 {
-  "name": "node-termux-api",
+  "name": "termux-api",
   "version": "0.0.1",
   "description": "A wrapper module for Termux-API",
-  "main": "dist/lib/TermuxApi.js",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist/index.*",
+    "dist/lib"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/edupsousa/node-termux-api/issues"
   },
-  "homepage": "https://github.com/edupsousa/node-termux-api#readme"
+  "homepage": "https://github.com/edupsousa/node-termux-api#readme",
+  "devDependencies": {
+    "typescript": "^1.8.10"
+  }
 }
