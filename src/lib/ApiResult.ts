@@ -14,7 +14,13 @@ export class ApiResult {
         });
     }
     public async getOutputObject(): Promise<Object> {
-        return JSON.parse(await this.output);
+        let output = await this.output;
+        try {
+            return JSON.parse(output);
+        } catch (e) {
+            console.error(e);
+            throw e;
+        }
     }
     public async getOutputString(): Promise<string> {
         return await this.output;

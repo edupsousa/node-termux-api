@@ -7,7 +7,7 @@ export class BaseCommandBuilder {
     constructor(apiCommand: string) {
         this.instance = new ApiModuleConfig(apiCommand);
     }
-    build(): ApiModuleConfig {
+    public build(): ApiModuleConfig {
         return this.instance;
     }
 }
