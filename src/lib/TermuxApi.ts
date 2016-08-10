@@ -25,6 +25,10 @@ export class TermuxApi {
     public runApi(moduleConfig: ApiModuleConfig): ApiResult {
         let args = [moduleConfig.moduleName].concat(moduleConfig.getArgs());
         let api = childProcess.spawn(this.apiPath, args);
+        let childInput = moduleConfig.getInput();
+        if (childInput !== null) {
+            api.stdin.end(childInput);
+        }
         return new ApiResult(api);
     }
     public createCommand(): ApiCommandFactory {
