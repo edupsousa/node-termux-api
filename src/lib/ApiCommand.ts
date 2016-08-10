@@ -1,5 +1,7 @@
+import { TermuxApi } from './TermuxApi';
+import { ApiResult } from './ApiResult';
 
-export class ApiModuleConfig {
+export class ApiCommand {
     private eParams: Map<string, string> = new Map();
     private esParams: Map<string, string> = new Map();
     private ezParams: Map<string, string> = new Map();
@@ -8,8 +10,11 @@ export class ApiModuleConfig {
     private esaParams: Map<string, string> = new Map();
     private lastArg: string = null;
     private input: string = null;
-    constructor(public moduleName: string) {
-        
+    constructor(public commandName: string) {
+
+    }
+    public run(): ApiResult {
+        return TermuxApi.getInstance().runApi(this);
     }
     public setEParam(key: string, param: string): void {
         this.eParams.set(key, param);
@@ -18,19 +23,19 @@ export class ApiModuleConfig {
         this.esParams.set(key, param);
     }
     public setEZParam(key: string, param: boolean): void {
-        let strParam:string = (param ? 'true' : 'false');
+        let strParam: string = (param ? 'true' : 'false');
         this.ezParams.set(key, strParam);
     }
     public setEIParam(key: string, param: number): void {
-        let strParam:string = param.toString();
+        let strParam: string = param.toString();
         this.eiParams.set(key, strParam);
     }
     public setEFParam(key: string, param: number): void {
-        let strParam:string = param.toString();
+        let strParam: string = param.toString();
         this.efParams.set(key, strParam);
     }
     public addESA(key: string, param: Array<string>): void {
-        let strParam:string = param.join(','); 
+        let strParam: string = param.join(',');
         this.esaParams.set(key, strParam);
     }
     public setLastArg(arg: string): void {
@@ -47,7 +52,7 @@ export class ApiModuleConfig {
     }
     public getArgs(): Array<string> {
         let args: Array<string> = [];
-        
+
         args.concat(this.getArgsForParamType('e', this.eParams));
         args.concat(this.getArgsForParamType('es', this.esParams));
         args.concat(this.getArgsForParamType('ez', this.ezParams));

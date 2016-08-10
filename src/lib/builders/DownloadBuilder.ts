@@ -5,15 +5,15 @@ export class DownloadBuilder extends BaseCommandBuilder {
         super('Download');
     }
     public setUrl(url: string): DownloadBuilder {
-        this.instance.setLastArg(url);
+        this.command.setLastArg(url);
         return this;
     }
     public setDescription(description: string): DownloadBuilder {
-        this.instance.setESParam('description', description);
+        this.command.setESParam('description', description);
         return this;
     }
     public setTitle(title: string): DownloadBuilder {
-        this.instance.setESParam('title', title);
+        this.command.setESParam('title', title);
         return this;
     }
 }

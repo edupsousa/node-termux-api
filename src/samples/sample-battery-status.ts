@@ -1,14 +1,14 @@
 import { TermuxApi } from '../lib/TermuxApi';
 
 async function main() {
-    let api = new TermuxApi();
+    let api = TermuxApi.getInstance();
     let exists = await api.apiExists();
 
     if (exists) {
-        let command = api.createCommand()
+        let result = api.createCommand()
             .batteryStatus()
-            .build();
-        let result = api.runApi(command);
+            .build()
+            .run();
         let code = await result.getStatusCode();
         if (code !== 0) {
             console.log('Error executing API');

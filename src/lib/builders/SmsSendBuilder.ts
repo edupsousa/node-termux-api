@@ -5,7 +5,7 @@ export class SmsSendBuilder extends BaseCommandBuilder {
         super('SmsSend');
     }
     public setRecipients(recipients: Array<string>): SmsSendBuilder {
-        this.instance.addESA('recipients', recipients);
+        this.command.addESA('recipients', recipients);
         return this;
     }
     public setRecipient(recipient: string): SmsSendBuilder {
@@ -13,7 +13,7 @@ export class SmsSendBuilder extends BaseCommandBuilder {
         return this;
     }
     public setMessage(message: string): SmsSendBuilder {
-        this.instance.setLastArg(message);
+        this.command.setLastArg(message);
         return this;
     }
 }

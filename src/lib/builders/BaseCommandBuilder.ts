@@ -1,13 +1,13 @@
-import { ApiModuleConfig } from '../ApiModuleConfig';
+import { ApiCommand } from '../ApiCommand';
 import { ApiResult } from '../ApiResult';
 import { TermuxApi } from '../TermuxApi';
 
 export class BaseCommandBuilder {
-    protected instance: ApiModuleConfig;
+    protected command: ApiCommand;
     constructor(apiCommand: string) {
-        this.instance = new ApiModuleConfig(apiCommand);
+        this.command = new ApiCommand(apiCommand);
     }
-    public build(): ApiModuleConfig {
-        return this.instance;
+    public build(): ApiCommand {
+        return this.command;
     }
 }

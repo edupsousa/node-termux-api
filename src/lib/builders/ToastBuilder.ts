@@ -5,11 +5,11 @@ export class ToastBuilder extends BaseCommandBuilder {
         super('Toast');
     }
     setText(text: string): ToastBuilder {
-        this.instance.setStdinInput(text);
+        this.command.setStdinInput(text);
         return this;
     }
     shortDuration(): ToastBuilder {
-        this.instance.setEZParam('short', true);
+        this.command.setEZParam('short', true);
         return this;
     }
 }
