@@ -2,7 +2,7 @@ import { ApiCommand } from './ApiCommand';
 import { ApiCommandFactory } from './ApiCommandFactory';
 import { ApiRunner } from './ApiRunner';
 import { ApiResult } from './ApiResult';
-import { access, X_OK } from 'fs';
+import { access, constants } from 'fs';
 
 const DEFAULT_API_PATH = '/data/data/com.termux/files/usr/libexec/termux-api';
 
@@ -24,7 +24,7 @@ export class TermuxApi {
     }
     public async apiExists(): Promise<boolean> {
         return new Promise<boolean>(resolve => {
-            access(this.apiRunner.apiPath, X_OK, err => {
+            access(this.apiRunner.apiPath, constants.X_OK, err => {
                 if (err)
                     resolve(false);
                 resolve(true);
