@@ -27,9 +27,7 @@
   },
   "homepage": "https://github.com/edupsousa/node-termux-api#readme",
   "devDependencies": {
-    "typescript": "^1.8.10"
-  },
-  "dependencies": {
+    "typescript": "^1.8.10",
     "@types/node": "^6.0.53"
   }
 }
