@@ -1,5 +1,9 @@
 # Termux-API Wrapper for Node.JS
 
+## This Repository is Unmaintained and Archived (Read-Only)
+
+Unfortunately, due to my work, i could not maintain this repository updated at this moment.
+
 This project aims to create a simple interface to invoke Termux-API commands
 directly from Node.JS applications. To use it you need to have Termux and Termux-API
 installed on your Android, and Node.JS installed on the Termux environment.
